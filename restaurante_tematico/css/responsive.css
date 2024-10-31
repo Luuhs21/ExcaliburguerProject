@@ -1,0 +1,104 @@
+@media screen and (max-width: 830px) {
+
+    #home,
+    #local,
+    #sobre,
+    #contato {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        margin: 0px;
+        max-width: 100%;
+    }
+
+    .menu-button-container {
+        position: fixed;
+        display: flex;
+        right: 0;
+        top: 0;
+    }
+
+    .navegacao-lateral {
+        position: fixed;
+        left: 0px;
+        top: 80px;
+        flex-direction: column;
+        width: 30vw;
+        justify-content: center;
+        align-items: center;
+        transform: scaleX(0);
+    }
+
+    .navegacao-lateral>li {
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        color: #fff;
+        background-color: #000;
+    }
+/* 
+    .navegacao-lateral>li:first-child {
+        border-top: 1 px solid;
+    }
+
+    .navegacao-lateral>li:not(:last-child){
+        border-bottom: 1px solid;
+    } */
+    
+    label {
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        height: 22px;
+        width: 30px;
+    }
+
+    label span {
+        position: absolute;
+        display: block;
+        height: 5px;
+        width: 100%;
+        /* color: #000; */
+        background-color: #000;
+        border-radius: 30px;
+        transition: 0.25 ease-in-out;
+    }
+
+    label span:nth-child(1) {
+        top: 0px;
+    }
+    label span:nth-child(2) {
+        top: 8px;
+    }
+    label span:nth-child(3) {
+        top: 16px;
+    }
+    
+    #checkbox-menu:checked+label span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+    #checkbox-menu:checked+label span:nth-child(2){
+        opacity: 0;
+    }
+    #checkbox-menu:checked+label span:nth-child(3){
+        transform: rotate(45deg);
+        top: 8px;
+    }
+
+    #checkbox-menu:checked~nav .navegacao-lateral {
+        transform: scaleX(1);
+        transform-origin: right;
+        transition: transform 0.5s ease;
+    }
+
+    nav .navegacao-lateral a {
+        text-align: center;
+        width: 100%;
+    }
+    
+}
